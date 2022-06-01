@@ -61,3 +61,4 @@ To recompile any proto after changes:
 ```shell
 protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. path/to/proto
 ```
+# micro_use
