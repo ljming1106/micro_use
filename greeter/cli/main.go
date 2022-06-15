@@ -7,8 +7,7 @@ import (
 	//"github.com/micro/go-micro/v2/util/log"
 	log "github.com/micro/examples/greeter/common/logger"
 	"github.com/micro/go-plugins/wrapper/breaker/hystrix/v2"
-	// 引入插件
-	"github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
+
 	"sync"
 
 	hello "github.com/micro/examples/greeter/srv/proto/hello"
@@ -16,6 +15,7 @@ import (
 
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/etcd/v2"
+	"github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
 )
 
 // MacOS run：

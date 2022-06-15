@@ -16,6 +16,7 @@ replace google.golang.org/grpc => google.golang.org/grpc v1.24.0
 
 require (
 	github.com/99designs/gqlgen v0.10.1
+	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
 	github.com/astaxie/beego v1.12.0
 	github.com/emicklei/go-restful v2.11.1+incompatible
 	github.com/gin-gonic/gin v1.4.0
@@ -38,10 +39,15 @@ require (
 	github.com/micro/go-plugins/wrapper/ratelimiter/uber/v2 v2.9.1
 	github.com/micro/go-plugins/wrapper/select/roundrobin/v2 v2.3.0
 	github.com/micro/go-plugins/wrapper/select/shard/v2 v2.3.0
+	github.com/micro/go-plugins/wrapper/trace/opentracing/v2 v2.9.1
 	github.com/micro/micro/v2 v2.4.0
+	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pborman/uuid v1.2.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
+	github.com/uber/jaeger-client-go v2.30.0+incompatible
+	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/vektah/gqlparser v1.2.0
+	go.uber.org/zap v1.13.0
 	golang.org/x/net v0.0.0-20200520182314-0ba52f642ac2
 	google.golang.org/genproto v0.0.0-20191216164720-4f79533eabd1
 	google.golang.org/grpc v1.26.0

@@ -16,10 +16,8 @@ import (
 	log "github.com/micro/examples/greeter/common/logger"
 
 	limiter "github.com/micro/go-plugins/wrapper/ratelimiter/uber/v2"
-	"google.golang.org/grpc"
-	// 引入插件
 	"github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
-	// ======
+	"google.golang.org/grpc"
 )
 
 // MacOS run：
@@ -67,6 +65,7 @@ func main() {
 		micro.WrapHandler(limiter.NewHandlerWrapper(QPS)),
 		// 配置链路追踪为jaeger
 		micro.WrapHandler(opentracing.NewHandlerWrapper(jaegerTracer)),
+
 		// 配置etcd为注册中心，配置etcd路径，默认端口是2379（docker对外映射端口12379）
 		micro.Registry(etcd.NewRegistry(
 			// 地址是我本地etcd服务器地址，不要照抄
