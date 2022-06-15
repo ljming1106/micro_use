@@ -13,6 +13,9 @@ import (
 
 	hello "github.com/micro/examples/greeter/srv/proto/hello"
 	client "github.com/micro/go-micro/v2/client"
+
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-plugins/registry/etcd/v2"
 )
 
 // MacOS run：
@@ -42,6 +45,11 @@ func main() {
 			// 配置链路追踪为jaeger
 			opentracing.NewClientWrapper(jaegerTracer),
 		),
+		// 配置etcd为注册中心，配置etcd路径，默认端口是2379（docker对外映射端口12379）
+		micro.Registry(etcd.NewRegistry(
+			// 地址是我本地etcd服务器地址，不要照抄
+			registry.Addrs("127.0.0.1:12379"),
+		)),
 	)
 
 	log.Info("service init...")
